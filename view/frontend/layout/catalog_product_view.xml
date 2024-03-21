@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © BluethinkInc All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+         <css src="Bluethinkinc_QuestionAnswer::css/customcss.css" />
+    </head>
+   <body>
+       <referenceBlock name="product.info.details">
+           <block class="Bluethinkinc\QuestionAnswer\Block\Index\Index" name="catalog.product.list.bluethinkinc.questionanswer" as="bluethinkinc_product_questionanswer" template="Bluethinkinc_QuestionAnswer::questionanswer.phtml" group="detailed_info" ifconfig="questionAnswer/general/enable" cacheable="false">
+               <arguments>
+                   <argument name="title" xsi:type="helper" helper="Bluethinkinc\QuestionAnswer\Helper\Data::getTitleConfigure"/> 
+                    <argument name="sort_order" xsi:type="string">30</argument>
+               </arguments>
+           </block>
+       </referenceBlock>
+       <referenceContainer name="product.info.details.after.wrapper.main">
+            <block class="Magento\Framework\View\Element\Template"
+                before="product.reviews.wrapper"
+                name="product.bluethinkinc.questionanswer.wrapper"
+                template="Bluethinkinc_QuestionAnswer::bluethinkinc_section_wrapper.phtml">
+                <block class="Bluethinkinc\QuestionAnswer\Block\Index\Index"
+                       name="catalog.product.bluethinkinc.questionanswer.full.width"
+                       as="bluethinkinc_product_questionanswer"
+                       template="Bluethinkinc_QuestionAnswer::questionanswer.phtml"
+                       group="detailed_info" ifconfig="questionAnswer/general/enable"
+                       cacheable="false">
+                </block>
+            </block>
+        </referenceContainer>
+   </body>
+</page>
+
