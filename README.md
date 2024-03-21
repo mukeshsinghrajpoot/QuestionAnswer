@@ -2,7 +2,7 @@
 
 ## Main Functionalities
 
-- The purpose of QuestionAnswer module is Send mail low Inventory product attech csv file on all store owner email.
+- The purpose of the QuestionAnswer module is to show Question Answer for products to all customer.
 
 ### Type 1: Zip file
 
